@@ -1,0 +1,82 @@
+@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Sign In";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In - MotoLedger</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body style="background-color: var(--ml-bg);">
+    <div class="guest-hero-container">
+        <div class="guest-card" style="max-width: 440px; text-align: left;">
+            <!-- Brand Mark -->
+            <div class="text-center mb-4">
+                <a href="/" class="text-decoration-none d-inline-flex align-items-center gap-2 mb-2">
+                    <div style="width: 40px; height: 40px; background-color: #1E3B2F; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #F5F0E6; font-size: 1.25rem;">
+                        <i class="bi bi-speedometer2"></i>
+                    </div>
+                    <span class="fw-bold fs-5" style="color: #1E3B2F;">MotoLedger</span>
+                </a>
+                <h5 class="fw-bold mb-1" style="color: #1E3B2F;">Sign in to your account</h5>
+                <p class="text-muted small mb-0">Enter your credentials to access the lot dashboard.</p>
+            </div>
+
+            <!-- Login Form -->
+            <form id="account" method="post">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger py-2 px-3 small rounded mb-3" role="alert"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Input.Email" class="ml-form-label">Email Address</label>
+                    <input asp-for="Input.Email" class="ml-input-control" autocomplete="username" aria-required="true" placeholder="name@dealership.pk" />
+                    <span asp-validation-for="Input.Email" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between align-items-center mb-1">
+                        <label asp-for="Input.Password" class="ml-form-label mb-0">Password</label>
+                        <a asp-page="./ForgotPassword" class="text-decoration-none small" style="color: #1E3B2F;">Forgot?</a>
+                    </div>
+                    <input asp-for="Input.Password" class="ml-input-control" autocomplete="current-password" aria-required="true" placeholder="Enter password" />
+                    <span asp-validation-for="Input.Password" class="text-danger small"></span>
+                </div>
+
+                <div class="d-flex align-items-center mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" asp-for="Input.RememberMe" id="rememberMeCheck" />
+                        <label class="form-check-label small text-muted" for="rememberMeCheck">
+                            Remember this device
+                        </label>
+                    </div>
+                </div>
+
+                <button id="login-submit" type="submit" class="btn-primary-forest w-100 py-2 mb-3">
+                    Sign In
+                </button>
+            </form>
+
+            <div class="text-center pt-2 border-top">
+                <span class="text-muted small">Do not have an account?</span>
+                <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl" class="text-decoration-none small fw-semibold ms-1" style="color: #1E3B2F;">
+                    Create account
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>

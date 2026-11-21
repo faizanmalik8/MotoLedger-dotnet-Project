@@ -1,0 +1,37 @@
+@using Microsoft.AspNetCore.Identity
+@using MotoLedger.Data
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    var user = await UserManager.GetUserAsync(User);
+    var roles = await UserManager.GetRolesAsync(user!);
+    var displayName = user?.FullName ?? User.Identity?.Name ?? "User";
+    var roleName = roles.FirstOrDefault() ?? "User";
+    var roleClass = roleName == "Owner" ? "badge-role-owner" : "badge-role-manager";
+
+    <div class="d-flex align-items-center gap-2">
+        <div class="d-flex align-items-center gap-2 px-2 py-1 rounded bg-white border">
+            <i class="bi bi-person-circle text-muted"></i>
+            <span class="fw-medium text-dark small">@displayName</span>
+            <span class="@roleClass">@roleName</span>
+        </div>
+        <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" class="d-inline">
+            <button type="submit" class="btn btn-sm btn-outline-secondary py-1 px-2.5">
+                <i class="bi bi-box-arrow-right me-1"></i> Logout
+            </button>
+        </form>
+    </div>
+}
+else
+{
+    <div class="d-flex align-items-center gap-2">
+        <a class="btn-secondary-slate py-1.5 px-3" asp-area="Identity" asp-page="/Account/Login">
+            Sign In
+        </a>
+        <a class="btn-primary-cobalt py-1.5 px-3" asp-area="Identity" asp-page="/Account/Register">
+            Create Account
+        </a>
+    </div>
+}

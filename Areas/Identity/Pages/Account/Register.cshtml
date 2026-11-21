@@ -1,0 +1,103 @@
+@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Create Account";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Account - MotoLedger</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body style="background-color: var(--ml-bg);">
+    <div class="guest-hero-container">
+        <div class="guest-card" style="max-width: 440px; text-align: left;">
+            <!-- Brand Mark -->
+            <div class="text-center mb-4">
+                <a href="/" class="text-decoration-none d-inline-flex align-items-center gap-2 mb-2">
+                    <div style="width: 40px; height: 40px; background-color: #1E3B2F; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #F5F0E6; font-size: 1.25rem;">
+                        <i class="bi bi-speedometer2"></i>
+                    </div>
+                    <span class="fw-bold fs-5" style="color: #1E3B2F;">MotoLedger</span>
+                </a>
+                <h5 class="fw-bold mb-1" style="color: #1E3B2F;">Create an account</h5>
+                <p class="text-muted small mb-0">Select your dealership role and enter your details.</p>
+            </div>
+
+            <!-- Registration Form -->
+            <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger py-2 px-3 small rounded mb-3" role="alert"></div>
+
+                <!-- Minimal Role Selector (Segmented Control) -->
+                <div class="mb-3">
+                    <label class="ml-form-label">Select Role</label>
+                    <div class="role-segmented-group">
+                        <input type="radio" asp-for="Input.Role" value="Manager" id="roleManager" />
+                        <label class="role-segmented-label" for="roleManager">
+                            <i class="bi bi-person"></i> Manager
+                        </label>
+
+                        <input type="radio" asp-for="Input.Role" value="Owner" id="roleOwner" />
+                        <label class="role-segmented-label" for="roleOwner">
+                            <i class="bi bi-shield-lock"></i> Owner
+                        </label>
+                    </div>
+                    <span asp-validation-for="Input.Role" class="text-danger small"></span>
+                </div>
+
+                <!-- Full Name -->
+                <div class="mb-3">
+                    <label asp-for="Input.FullName" class="ml-form-label">Full Name</label>
+                    <input asp-for="Input.FullName" class="ml-input-control" autocomplete="name" aria-required="true" placeholder="Muhammad Faizan" />
+                    <span asp-validation-for="Input.FullName" class="text-danger small"></span>
+                </div>
+
+                <!-- Email Address -->
+                <div class="mb-3">
+                    <label asp-for="Input.Email" class="ml-form-label">Email Address</label>
+                    <input asp-for="Input.Email" class="ml-input-control" autocomplete="username" aria-required="true" placeholder="faizan@dealership.pk" />
+                    <span asp-validation-for="Input.Email" class="text-danger small"></span>
+                </div>
+
+                <!-- Password -->
+                <div class="mb-3">
+                    <label asp-for="Input.Password" class="ml-form-label">Password</label>
+                    <input asp-for="Input.Password" class="ml-input-control" autocomplete="new-password" aria-required="true" placeholder="Minimum 6 characters" />
+                    <span asp-validation-for="Input.Password" class="text-danger small"></span>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="mb-4">
+                    <label asp-for="Input.ConfirmPassword" class="ml-form-label">Confirm Password</label>
+                    <input asp-for="Input.ConfirmPassword" class="ml-input-control" autocomplete="new-password" aria-required="true" placeholder="Repeat your password" />
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger small"></span>
+                </div>
+
+                <!-- Submit Button -->
+                <button id="registerSubmit" type="submit" class="btn-primary-forest w-100 py-2 mb-3">
+                    Create Account
+                </button>
+            </form>
+
+            <div class="text-center pt-2 border-top">
+                <span class="text-muted small">Already have an account?</span>
+                <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl" class="text-decoration-none small fw-semibold ms-1" style="color: #1E3B2F;">
+                    Sign in
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>

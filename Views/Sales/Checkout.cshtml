@@ -1,0 +1,140 @@
+@{
+    ViewData["Title"] = "Record Sale";
+}
+
+<div class="container-fluid p-0" style="max-width: 960px;">
+    <!-- Breadcrumb -->
+    <nav class="mb-3">
+        <a href="@Url.Action("Ledger", "Sales")" class="text-decoration-none text-muted small">
+            <i class="bi bi-arrow-left me-1"></i> Back to Sales Ledger
+        </a>
+    </nav>
+
+    <!-- Header -->
+    <div class="mb-4">
+        <h4 class="fw-bold mb-1" style="color: #1E3B2F;">Finalize Vehicle Sale</h4>
+        <p class="text-muted small mb-0">Record buyer information and lock in realized lot profit in Pakistani Rupees.</p>
+    </div>
+
+    <form method="post">
+        <div class="row g-4">
+            <!-- Left Column: Form Details -->
+            <div class="col-lg-7">
+                <div class="ml-card p-4 mb-4">
+                    <h6 class="fw-bold mb-3" style="color: #1E3B2F;">1. Vehicle Selection</h6>
+                    <div class="mb-3">
+                        <label class="ml-form-label">Available Lot Vehicle</label>
+                        <select class="ml-input-control" required>
+                            <option value="1042" selected>LEA-22-4891: 2022 Honda Civic Oriel (Total Basis: Rs. 5,540,000)</option>
+                            <option value="1040">KHI-20-1184: 2020 Kia Sportage FWD (Total Basis: Rs. 6,220,000)</option>
+                        </select>
+                        <span class="text-muted small mt-1 d-block">Only vehicles currently in Available status can be sold.</span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="ml-form-label">Agreed Final Sale Price (Rs.)</label>
+                        <div class="position-relative">
+                            <input type="number" step="5000" class="ml-input-control" value="5850000" style="padding-left: 2.75rem;" required />
+                            <span class="position-absolute text-muted small fw-medium" style="left: 0.75rem; top: 50%; transform: translateY(-50%);">Rs.</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="ml-form-label">Sale Date</label>
+                        <input type="date" class="ml-input-control" value="@DateTime.Now.ToString("yyyy-MM-dd")" required />
+                    </div>
+                </div>
+
+                <div class="ml-card p-4">
+                    <h6 class="fw-bold mb-3" style="color: #1E3B2F;">2. Customer & Payment Details</h6>
+                    <div class="mb-3">
+                        <label class="ml-form-label">Buyer Full Name</label>
+                        <input type="text" class="ml-input-control" placeholder="e.g. Usman Ahmed" required />
+                    </div>
+
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-6">
+                            <label class="ml-form-label">Mobile Number</label>
+                            <input type="tel" class="ml-input-control" placeholder="0300-1234567" required />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="ml-form-label">CNIC Number</label>
+                            <input type="text" class="ml-input-control" placeholder="35202-0000000-0" />
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="ml-form-label">Payment Method</label>
+                        <div class="role-segmented-group">
+                            <input type="radio" name="PaymentMethod" value="Cash" id="payCash" checked />
+                            <label class="role-segmented-label" for="payCash">
+                                <i class="bi bi-cash"></i> Cash
+                            </label>
+
+                            <input type="radio" name="PaymentMethod" value="Transfer" id="payTransfer" />
+                            <label class="role-segmented-label" for="payTransfer">
+                                <i class="bi bi-bank"></i> Pay Order / Transfer
+                            </label>
+
+                            <input type="radio" name="PaymentMethod" value="Cheque" id="payCheque" />
+                            <label class="role-segmented-label" for="payCheque">
+                                <i class="bi bi-card-checklist"></i> Cheque
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="mb-0">
+                        <label class="ml-form-label">Transaction Notes</label>
+                        <textarea class="ml-input-control" rows="2" placeholder="Biometric verification status, delivery date, or token payment note..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Live Margin Calculation Preview -->
+            <div class="col-lg-5">
+                <div class="ml-card p-4 position-sticky" style="top: 20px;">
+                    <h6 class="fw-bold mb-3" style="color: #1E3B2F;">Real-Time Profit Breakdown</h6>
+
+                    <div class="d-flex justify-content-between py-2 border-bottom">
+                        <span class="text-muted small">Agreed Sale Price</span>
+                        <span class="fw-bold text-dark">Rs. 5,850,000</span>
+                    </div>
+
+                    <div class="d-flex justify-content-between py-2 border-bottom">
+                        <span class="text-muted small">Base Purchase Price</span>
+                        <span class="text-danger small">-Rs. 5,400,000</span>
+                    </div>
+
+                    <div class="d-flex justify-content-between py-2 border-bottom">
+                        <span class="text-muted small">Workshop Expenses</span>
+                        <span class="text-danger small">-Rs. 140,000</span>
+                    </div>
+
+                    <div class="d-flex justify-content-between py-2 border-bottom">
+                        <span class="text-muted small">Total Cost Basis</span>
+                        <span class="fw-semibold text-dark">Rs. 5,540,000</span>
+                    </div>
+
+                    <div class="p-3 my-3 rounded border" style="background-color: #E8F5ED; border-color: #B8E0C9 !important;">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <span class="text-uppercase fw-bold" style="font-size: 0.75rem; color: #1E5C3A;">Estimated Net Profit</span>
+                                <div class="fs-4 fw-bold" style="color: #1E5C3A;">+Rs. 310,000</div>
+                            </div>
+                            <span class="badge px-2 py-1 small" style="background-color: #1E5C3A; color: #FFFFFF;">
+                                5.6% Margin
+                            </span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary-forest w-100 py-2.5 mb-2">
+                        <i class="bi bi-check2-circle me-1"></i> Finalize Sale and Invoice
+                    </button>
+                    <a href="@Url.Action("Ledger", "Sales")" class="btn btn-outline-secondary w-100 text-center py-2">
+                        Cancel
+                    </a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

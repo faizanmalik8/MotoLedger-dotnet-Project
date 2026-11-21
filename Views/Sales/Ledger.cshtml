@@ -1,0 +1,143 @@
+@{
+    ViewData["Title"] = "Sales Ledger";
+}
+
+<div class="container-fluid p-0">
+    <!-- Header with Action -->
+    <div class="d-flex flex-wrap align-items-center justify-content-between mb-4 gap-2">
+        <div>
+            <h4 class="fw-bold mb-1" style="color: #1E3B2F;">Sales and Profit Ledger</h4>
+            <p class="text-muted small mb-0">Record of closed dealership sales, customer receipts, and net realized margins.</p>
+        </div>
+        <div class="d-flex gap-2">
+            <a href="@Url.Action("Checkout", "Sales")" class="btn-primary-forest">
+                <i class="bi bi-plus-lg me-1"></i> Record Sale
+            </a>
+        </div>
+    </div>
+
+    <!-- Summary Metrics (Pakistani Rupees) -->
+    <div class="row g-3 mb-4">
+        <div class="col-sm-6 col-lg-3">
+            <div class="kpi-card">
+                <span class="kpi-label">Gross Sales Volume</span>
+                <div class="kpi-value text-dark">Rs. 6.58M</div>
+                <div class="kpi-subtext">Total sales revenue MTD</div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            <div class="kpi-card">
+                <span class="kpi-label">Cost of Goods Sold</span>
+                <div class="kpi-value text-dark">Rs. 5.83M</div>
+                <div class="kpi-subtext">Acquisition and workshop</div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            <div class="kpi-card">
+                <span class="kpi-label">Realized Net Profit</span>
+                <div class="kpi-value profit">+Rs. 745,000</div>
+                <div class="kpi-subtext" style="color: #1E5C3A;">Total net margin</div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            <div class="kpi-card">
+                <span class="kpi-label">Average Profit / Car</span>
+                <div class="kpi-value" style="color: #1E3B2F;">Rs. 372,500</div>
+                <div class="kpi-subtext">11.3% Average return</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search / Filter Bar -->
+    <div class="ml-card p-3 mb-4">
+        <div class="row g-2 align-items-center">
+            <div class="col-md-5">
+                <div class="position-relative">
+                    <input type="text" class="ml-input-control" placeholder="Search by customer, invoice number, or vehicle..." style="padding-left: 2.25rem;" />
+                    <i class="bi bi-search position-absolute" style="left: 0.85rem; top: 50%; transform: translateY(-50%); color: var(--ml-text-muted);"></i>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <select class="ml-input-control">
+                    <option value="">All Time</option>
+                    <option value="this-month">This Month</option>
+                    <option value="last-month">Last Month</option>
+                    <option value="this-year">This Year</option>
+                </select>
+            </div>
+            <div class="col-md-4 text-md-end">
+                <span class="text-muted small fw-medium">Showing 2 closed transactions</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sales Table -->
+    <div class="ml-table-container">
+        <div class="table-responsive">
+            <table class="ml-table">
+                <thead>
+                    <tr>
+                        <th>Invoice #</th>
+                        <th>Sale Date</th>
+                        <th>Vehicle Sold</th>
+                        <th>Buyer</th>
+                        <th>Sale Price</th>
+                        <th>Cost Basis</th>
+                        <th>Net Margin</th>
+                        <th class="text-end">Invoice</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="fw-semibold">INV-PK-08</td>
+                        <td class="small">08/11/2026</td>
+                        <td>
+                            <div class="fw-semibold text-dark">2023 Suzuki Alto VXR</div>
+                            <span class="text-muted small">Reg # RWP-23-3051</span>
+                        </td>
+                        <td>
+                            <div class="fw-medium text-dark">Muhammad Tariq</div>
+                            <span class="text-muted small">0300-8491029</span>
+                        </td>
+                        <td class="fw-semibold text-dark">Rs. 2,480,000</td>
+                        <td class="text-muted small">Rs. 2,185,000</td>
+                        <td>
+                            <span class="badge border fw-bold px-2 py-1" style="background-color: #E8F5ED; color: #1E5C3A; border-color: #B8E0C9 !important;">
+                                +Rs. 295,000 (11.9%)
+                            </span>
+                        </td>
+                        <td class="text-end">
+                            <a href="@Url.Action("Invoice", "Sales", new { id = 8 })" class="btn-card-action" title="Print Invoice">
+                                <i class="bi bi-file-earmark-text me-1"></i> Receipt
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fw-semibold">INV-PK-07</td>
+                        <td class="small">30/10/2026</td>
+                        <td>
+                            <div class="fw-semibold text-dark">2019 Toyota Yaris ATIV X</div>
+                            <span class="text-muted small">Reg # LHR-19-7712</span>
+                        </td>
+                        <td>
+                            <div class="fw-medium text-dark">Hamza Ali</div>
+                            <span class="text-muted small">0321-4920194</span>
+                        </td>
+                        <td class="fw-semibold text-dark">Rs. 4,100,000</td>
+                        <td class="text-muted small">Rs. 3,650,000</td>
+                        <td>
+                            <span class="badge border fw-bold px-2 py-1" style="background-color: #E8F5ED; color: #1E5C3A; border-color: #B8E0C9 !important;">
+                                +Rs. 450,000 (11.0%)
+                            </span>
+                        </td>
+                        <td class="text-end">
+                            <a href="@Url.Action("Invoice", "Sales", new { id = 7 })" class="btn-card-action">
+                                <i class="bi bi-file-earmark-text me-1"></i> Receipt
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

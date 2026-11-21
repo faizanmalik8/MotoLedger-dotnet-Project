@@ -1,0 +1,79 @@
+@{
+    ViewData["Title"] = "Log Expense";
+}
+
+<div class="container-fluid p-0" style="max-width: 760px;">
+    <!-- Breadcrumb -->
+    <nav class="mb-3">
+        <a href="@Url.Action("History", "Expense")" class="text-decoration-none text-muted small">
+            <i class="bi bi-arrow-left me-1"></i> Back to Expenses
+        </a>
+    </nav>
+
+    <!-- Header -->
+    <div class="mb-4">
+        <h4 class="fw-bold mb-1" style="color: #1E3B2F;">Log Workshop Expense</h4>
+        <p class="text-muted small mb-0">Record maintenance, parts, or detailing costs against a vehicle.</p>
+    </div>
+
+    <!-- Form Container -->
+    <div class="ml-card p-4">
+        <form method="post">
+            <div class="mb-3">
+                <label class="ml-form-label">Select Vehicle</label>
+                <select class="ml-input-control" required>
+                    <option value="">Choose a vehicle from lot inventory...</option>
+                    <option value="1042" selected>LEA-22-4891: 2022 Honda Civic Oriel (Cost Basis: Rs. 5,540,000)</option>
+                    <option value="1041">ICT-21-9042: 2021 Toyota Corolla Altis Grande (Cost Basis: Rs. 4,895,000)</option>
+                    <option value="1040">KHI-20-1184: 2020 Kia Sportage FWD (Cost Basis: Rs. 6,220,000)</option>
+                </select>
+            </div>
+
+            <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                    <label class="ml-form-label">Expense Type</label>
+                    <select class="ml-input-control" required>
+                        <option value="Mechanical">Mechanical Repair</option>
+                        <option value="Detailing">Detailing and Polish</option>
+                        <option value="PaintBody">Paint and Denting</option>
+                        <option value="Tires">Tires and Suspension</option>
+                        <option value="Electrical">Electrical and Battery</option>
+                        <option value="Other">Other Workshop Cost</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="ml-form-label">Expense Date</label>
+                    <input type="date" class="ml-input-control" value="@DateTime.Now.ToString("yyyy-MM-dd")" required />
+                </div>
+            </div>
+
+            <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                    <label class="ml-form-label">Cost (Rs.)</label>
+                    <div class="position-relative">
+                        <input type="number" step="500" class="ml-input-control" placeholder="e.g. 45000" style="padding-left: 2.75rem;" required />
+                        <span class="position-absolute text-muted small fw-medium" style="left: 0.75rem; top: 50%; transform: translateY(-50%);">Rs.</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label class="ml-form-label">Vendor / Workshop Name</label>
+                    <input type="text" class="ml-input-control" placeholder="e.g. Bilal Auto Workshop, Khan Motors" required />
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <label class="ml-form-label">Description of Work Performed</label>
+                <textarea class="ml-input-control" rows="3" placeholder="Describe the parts replaced, labor, or diagnostic details..." required></textarea>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-end gap-2 pt-3 border-top">
+                <a href="@Url.Action("History", "Expense")" class="btn btn-outline-secondary py-2 px-3">
+                    Cancel
+                </a>
+                <button type="submit" class="btn-primary-forest">
+                    <i class="bi bi-check-lg me-1"></i> Record Expense
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

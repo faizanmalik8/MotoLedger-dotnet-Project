@@ -1,0 +1,40 @@
+@model MotoLedger.Models.Entities.Vehicle
+
+<tr>
+    <td class="fw-semibold">@Model.RegistrationNumber</td>
+    <td>
+        <div class="fw-semibold text-dark">@Model.Make @Model.Model</div>
+        <span class="text-muted small">Purchased: @Model.PurchaseDate.ToString("dd MMM yyyy")</span>
+    </td>
+    <td>Rs. @Model.BasePurchasePrice.ToString("N0")</td>
+    <td>
+        @if (Model.Status == "Available")
+        {
+            <span class="badge-status badge-status-available">Available</span>
+        }
+        else if (Model.Status == "InService")
+        {
+            <span class="badge-status badge-status-service">In Service</span>
+        }
+        else
+        {
+            <span class="badge-status badge-status-sold">Sold</span>
+        }
+    </td>
+    <td class="text-end">
+        <div class="d-inline-flex gap-1">
+            <a href="@Url.Action("Details", "Vehicle", new { id = Model.Id })" class="btn-card-action" title="View Details">
+                <i class="bi bi-eye"></i>
+            </a>
+            <a href="@Url.Action("Create", "Expense", new { vehicleId = Model.Id })" class="btn-card-action" title="Log Expense">
+                <i class="bi bi-wrench"></i>
+            </a>
+            @if (Model.Status == "Available")
+            {
+                <a href="@Url.Action("Checkout", "Sales", new { vehicleId = Model.Id })" class="btn-card-action" title="Record Sale">
+                    <i class="bi bi-receipt"></i>
+                </a>
+            }
+        </div>
+    </td>
+</tr>

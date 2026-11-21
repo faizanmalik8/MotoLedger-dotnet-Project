@@ -1,0 +1,147 @@
+@{
+    ViewData["Title"] = "Expense History";
+}
+
+<div class="container-fluid p-0">
+    <!-- Header with Action -->
+    <div class="d-flex flex-wrap align-items-center justify-content-between mb-4 gap-2">
+        <div>
+            <h4 class="fw-bold mb-1" style="color: #1E3B2F;">Reconditioning Expense Ledger</h4>
+            <p class="text-muted small mb-0">Complete log of all maintenance, parts, and workshop costs across your lot.</p>
+        </div>
+        <div class="d-flex gap-2">
+            <a href="@Url.Action("Create", "Expense")" class="btn-primary-forest">
+                <i class="bi bi-plus-lg me-1"></i> Log Expense
+            </a>
+        </div>
+    </div>
+
+    <!-- Summary Metrics (Pakistani Rupees) -->
+    <div class="row g-3 mb-4">
+        <div class="col-sm-6 col-md-4">
+            <div class="kpi-card">
+                <span class="kpi-label">Total Workshop Investment</span>
+                <div class="kpi-value text-dark">Rs. 390,000</div>
+                <div class="kpi-subtext">Cumulative repair costs on lot</div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="kpi-card">
+                <span class="kpi-label">Logged Service Items</span>
+                <div class="kpi-value text-dark">5</div>
+                <div class="kpi-subtext">Across 4 lot vehicles</div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="kpi-card">
+                <span class="kpi-label">Average Cost per Vehicle</span>
+                <div class="kpi-value text-dark">Rs. 78,000</div>
+                <div class="kpi-subtext">Average maintenance spend</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="ml-card p-3 mb-4">
+        <div class="row g-2 align-items-center">
+            <div class="col-md-5">
+                <div class="position-relative">
+                    <input type="text" class="ml-input-control" placeholder="Search by vehicle, vendor, or description..." style="padding-left: 2.25rem;" />
+                    <i class="bi bi-search position-absolute" style="left: 0.85rem; top: 50%; transform: translateY(-50%); color: var(--ml-text-muted);"></i>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <select class="ml-input-control">
+                    <option value="">All Categories</option>
+                    <option value="Mechanical">Mechanical</option>
+                    <option value="Detailing">Detailing</option>
+                    <option value="PaintBody">Paint and Denting</option>
+                    <option value="Tires">Tires</option>
+                </select>
+            </div>
+            <div class="col-md-4 text-md-end">
+                <span class="text-muted small fw-medium">Showing 5 service records</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Expenses Table -->
+    <div class="ml-table-container">
+        <div class="table-responsive">
+            <table class="ml-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Vehicle</th>
+                        <th>Expense Type</th>
+                        <th>Vendor / Workshop</th>
+                        <th>Description</th>
+                        <th class="text-end">Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="small">02/11/2026</td>
+                        <td>
+                            <a href="@Url.Action("Details", "Vehicle", new { id = 1041 })" class="text-decoration-none fw-semibold" style="color: #1E3B2F;">
+                                ICT-21-9042: 2021 Toyota Corolla Grande
+                            </a>
+                        </td>
+                        <td><span class="badge bg-light text-dark border">Mechanical</span></td>
+                        <td class="text-muted small">Toyota Ravi Motors</td>
+                        <td>Complete brake service and transmission oil change</td>
+                        <td class="text-end fw-bold" style="color: #1E3B2F;">Rs. 95,000</td>
+                    </tr>
+                    <tr>
+                        <td class="small">28/10/2026</td>
+                        <td>
+                            <a href="@Url.Action("Details", "Vehicle", new { id = 1042 })" class="text-decoration-none fw-semibold" style="color: #1E3B2F;">
+                                LEA-22-4891: 2022 Honda Civic Oriel
+                            </a>
+                        </td>
+                        <td><span class="badge bg-light text-dark border">Detailing</span></td>
+                        <td class="text-muted small">Shahnawaz Auto Care</td>
+                        <td>Full interior shampoo and ceramic coating</td>
+                        <td class="text-end fw-bold" style="color: #1E3B2F;">Rs. 55,000</td>
+                    </tr>
+                    <tr>
+                        <td class="small">26/10/2026</td>
+                        <td>
+                            <a href="@Url.Action("Details", "Vehicle", new { id = 1042 })" class="text-decoration-none fw-semibold" style="color: #1E3B2F;">
+                                LEA-22-4891: 2022 Honda Civic Oriel
+                            </a>
+                        </td>
+                        <td><span class="badge bg-light text-dark border">Mechanical</span></td>
+                        <td class="text-muted small">Bilal Auto Workshop</td>
+                        <td>Brake pads replacement and rotor resurfacing</td>
+                        <td class="text-end fw-bold" style="color: #1E3B2F;">Rs. 85,000</td>
+                    </tr>
+                    <tr>
+                        <td class="small">20/10/2026</td>
+                        <td>
+                            <a href="@Url.Action("Details", "Vehicle", new { id = 1040 })" class="text-decoration-none fw-semibold" style="color: #1E3B2F;">
+                                KHI-20-1184: 2020 Kia Sportage FWD
+                            </a>
+                        </td>
+                        <td><span class="badge bg-light text-dark border">Tires</span></td>
+                        <td class="text-muted small">Al-Madina Tyre Zone</td>
+                        <td>Two new front Dunlop tires and wheel alignment</td>
+                        <td class="text-end fw-bold" style="color: #1E3B2F;">Rs. 120,000</td>
+                    </tr>
+                    <tr>
+                        <td class="small">14/10/2026</td>
+                        <td>
+                            <a href="@Url.Action("Details", "Vehicle", new { id = 1039 })" class="text-decoration-none fw-semibold" style="color: #1E3B2F;">
+                                RWP-23-3051: 2023 Suzuki Alto VXR
+                            </a>
+                        </td>
+                        <td><span class="badge bg-light text-dark border">Detailing</span></td>
+                        <td class="text-muted small">Khan Detailing Studio</td>
+                        <td>Lot preparation and dry clean</td>
+                        <td class="text-end fw-bold" style="color: #1E3B2F;">Rs. 35,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

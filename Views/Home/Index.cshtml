@@ -1,0 +1,291 @@
+@using Microsoft.AspNetCore.Identity
+@using MotoLedger.Data
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@{
+    ViewData["Title"] = "Dashboard";
+    var isAuthenticated = SignInManager.IsSignedIn(User);
+    var currentRole = "";
+    var fullName = "";
+    if (isAuthenticated)
+    {
+        var appUser = await UserManager.GetUserAsync(User);
+        if (appUser != null)
+        {
+            var userRoles = await UserManager.GetRolesAsync(appUser);
+            currentRole = userRoles.FirstOrDefault() ?? "Manager";
+            fullName = appUser.FullName ?? User.Identity?.Name ?? "User";
+        }
+    }
+}
+
+@if (!isAuthenticated)
+{
+    <!-- ==================== MINIMAL GUEST HOME PAGE ==================== -->
+    <div class="guest-hero-container">
+        <div class="guest-card">
+            <div class="d-inline-flex align-items-center justify-content-center mb-3" style="width: 56px; height: 56px; background-color: #1E3B2F; border-radius: 12px; color: #F5F0E6; font-size: 1.75rem;">
+                <i class="bi bi-speedometer2"></i>
+            </div>
+            
+            <h3 class="fw-bold text-dark mb-2">MotoLedger</h3>
+            <p class="text-muted small mb-4" style="line-height: 1.6;">
+                A minimalist dealership inventory and real-time profit tracking system. Track vehicle purchase costs, record workshop expenses, and calculate net margins upon sale.
+            </p>
+
+            <div class="d-flex flex-column gap-2 mb-3">
+                <a asp-area="Identity" asp-page="/Account/Login" class="btn-primary-forest py-2.5 fs-6">
+                    Sign In
+                </a>
+                <a asp-area="Identity" asp-page="/Account/Register" class="btn-outline-forest py-2.5 fs-6">
+                    Create Account
+                </a>
+            </div>
+
+            <div class="pt-3 border-top text-muted small" style="font-size: 0.75rem;">
+                Authorized Dealership Lot Management
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <!-- ==================== AUTHENTICATED DASHBOARD ==================== -->
+    <div>
+        <!-- Top Greeting -->
+        <div class="d-flex flex-wrap align-items-center justify-content-between mb-4 gap-2">
+            <div>
+                <h4 class="fw-bold mb-1" style="color: #1E3B2F;">Dealership Overview</h4>
+                <p class="text-muted small mb-0">
+                    Welcome, <span class="fw-medium text-dark">@fullName</span>. Signed in as <span class="@(currentRole == "Owner" ? "badge-role-owner" : "badge-role-manager")">@currentRole</span>
+                </p>
+            </div>
+            <div class="d-flex gap-2">
+                <a href="@Url.Action("Create", "Vehicle")" class="btn-primary-forest">
+                    <i class="bi bi-plus-lg me-1"></i> Add Vehicle
+                </a>
+            </div>
+        </div>
+
+        <!-- KPI Metrics Grid (Pakistani Rupees) -->
+        <div class="row g-3 mb-4">
+            <div class="col-sm-6 col-lg-3">
+                <div class="kpi-card">
+                    <span class="kpi-label">Active Vehicles</span>
+                    <div class="kpi-value">14</div>
+                    <div class="kpi-subtext">11 Available, 3 In Service</div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+                <div class="kpi-card">
+                    <span class="kpi-label">Lot Investment</span>
+                    <div class="kpi-value">Rs. 48.25M</div>
+                    <div class="kpi-subtext">Acquisition and repairs</div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+                <div class="kpi-card">
+                    <span class="kpi-label">Realized Profit (MTD)</span>
+                    <div class="kpi-value profit">+Rs. 2,850,000</div>
+                    <div class="kpi-subtext" style="color: #1E5C3A;">Across 6 closed sales</div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+                <div class="kpi-card">
+                    <span class="kpi-label">Cars Sold (MTD)</span>
+                    <div class="kpi-value">6</div>
+                    <div class="kpi-subtext">Avg Rs. 475,000 profit / car</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Operations -->
+        <div class="mb-4">
+            <h6 class="text-muted text-uppercase fw-semibold mb-2" style="font-size: 0.75rem; letter-spacing: 0.05em;">
+                Quick Operations
+            </h6>
+            <div class="row g-3">
+                <div class="col-sm-6 col-md-4">
+                    <a href="@Url.Action("Create", "Vehicle")" class="quick-action-tile">
+                        <div class="quick-action-icon">
+                            <i class="bi bi-car-front"></i>
+                        </div>
+                        <div>
+                            <div class="fw-semibold">Add Vehicle</div>
+                            <div class="text-muted small">Register new lot inventory</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-sm-6 col-md-4">
+                    <a href="@Url.Action("Create", "Expense")" class="quick-action-tile">
+                        <div class="quick-action-icon">
+                            <i class="bi bi-wrench"></i>
+                        </div>
+                        <div>
+                            <div class="fw-semibold">Log Workshop Expense</div>
+                            <div class="text-muted small">Record parts and maintenance</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-sm-6 col-md-4">
+                    <a href="@Url.Action("Checkout", "Sales")" class="quick-action-tile">
+                        <div class="quick-action-icon">
+                            <i class="bi bi-receipt"></i>
+                        </div>
+                        <div>
+                            <div class="fw-semibold">Record Sale</div>
+                            <div class="text-muted small">Finalize buyer invoice</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Active Inventory Table -->
+        <div class="ml-table-container mb-4">
+            <div class="ml-card-header">
+                <div>
+                    <h6 class="fw-bold mb-0" style="color: #1E3B2F;">Lot Inventory Summary</h6>
+                    <span class="text-muted small">Vehicles currently on dealership lot</span>
+                </div>
+                <a href="@Url.Action("Index", "Vehicle")" class="btn btn-sm btn-outline-secondary py-1 px-2.5">
+                    View All
+                </a>
+            </div>
+            <div class="table-responsive">
+                <table class="ml-table">
+                    <thead>
+                        <tr>
+                            <th>Reg #</th>
+                            <th>Vehicle</th>
+                            <th>Purchase Cost</th>
+                            <th>Expenses</th>
+                            <th>Total Basis</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="fw-semibold">LEA-22-4891</td>
+                            <td>
+                                <a href="@Url.Action("Details", "Vehicle", new { id = 1042 })" class="text-decoration-none fw-semibold" style="color: #1E3B2F;">
+                                    2022 Honda Civic Oriel
+                                </a>
+                                <div class="text-muted small">White | 34,000 km</div>
+                            </td>
+                            <td>Rs. 5,400,000</td>
+                            <td>Rs. 140,000</td>
+                            <td class="fw-bold" style="color: #1E3B2F;">Rs. 5,540,000</td>
+                            <td>
+                                <span class="badge-status badge-status-available">Available</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fw-semibold">ICT-21-9042</td>
+                            <td>
+                                <a href="@Url.Action("Details", "Vehicle", new { id = 1041 })" class="text-decoration-none fw-semibold" style="color: #1E3B2F;">
+                                    2021 Toyota Corolla Altis Grande
+                                </a>
+                                <div class="text-muted small">Silver | 52,000 km</div>
+                            </td>
+                            <td>Rs. 4,800,000</td>
+                            <td>Rs. 95,000</td>
+                            <td class="fw-bold" style="color: #1E3B2F;">Rs. 4,895,000</td>
+                            <td>
+                                <span class="badge-status badge-status-service">In Service</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fw-semibold">KHI-20-1184</td>
+                            <td>
+                                <a href="@Url.Action("Details", "Vehicle", new { id = 1040 })" class="text-decoration-none fw-semibold" style="color: #1E3B2F;">
+                                    2020 Kia Sportage FWD
+                                </a>
+                                <div class="text-muted small">Black | 61,000 km</div>
+                            </td>
+                            <td>Rs. 6,100,000</td>
+                            <td>Rs. 120,000</td>
+                            <td class="fw-bold" style="color: #1E3B2F;">Rs. 6,220,000</td>
+                            <td>
+                                <span class="badge-status badge-status-available">Available</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fw-semibold">RWP-23-3051</td>
+                            <td>
+                                <a href="@Url.Action("Details", "Vehicle", new { id = 1039 })" class="text-decoration-none fw-semibold" style="color: #1E3B2F;">
+                                    2023 Suzuki Alto VXR
+                                </a>
+                                <div class="text-muted small">Grey | 18,000 km</div>
+                            </td>
+                            <td>Rs. 2,150,000</td>
+                            <td>Rs. 35,000</td>
+                            <td class="fw-bold" style="color: #1E3B2F;">Rs. 2,185,000</td>
+                            <td>
+                                <span class="badge-status badge-status-sold">Sold</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Recent Sales Table -->
+        <div class="ml-table-container">
+            <div class="ml-card-header">
+                <div>
+                    <h6 class="fw-bold mb-0" style="color: #1E3B2F;">Recent Sales Ledger</h6>
+                    <span class="text-muted small">Latest closed transactions</span>
+                </div>
+                <a href="@Url.Action("Ledger", "Sales")" class="btn btn-sm btn-outline-secondary py-1 px-2.5">
+                    View Full Ledger
+                </a>
+            </div>
+            <div class="table-responsive">
+                <table class="ml-table">
+                    <thead>
+                        <tr>
+                            <th>Invoice</th>
+                            <th>Vehicle Sold</th>
+                            <th>Customer</th>
+                            <th>Sale Price</th>
+                            <th>Total Basis</th>
+                            <th>Net Profit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="fw-semibold">
+                                <a href="@Url.Action("Invoice", "Sales", new { id = 8 })" class="text-decoration-none fw-semibold" style="color: #1E3B2F;">
+                                    INV-PK-08
+                                </a>
+                            </td>
+                            <td>2023 Suzuki Alto VXR</td>
+                            <td>Muhammad Tariq</td>
+                            <td>Rs. 2,480,000</td>
+                            <td>Rs. 2,185,000</td>
+                            <td class="fw-bold" style="color: #1E5C3A;">+Rs. 295,000</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-semibold">
+                                <a href="@Url.Action("Invoice", "Sales", new { id = 7 })" class="text-decoration-none fw-semibold" style="color: #1E3B2F;">
+                                    INV-PK-07
+                                </a>
+                            </td>
+                            <td>2019 Toyota Yaris ATIV X</td>
+                            <td>Hamza Ali</td>
+                            <td>Rs. 4,100,000</td>
+                            <td>Rs. 3,650,000</td>
+                            <td class="fw-bold" style="color: #1E5C3A;">+Rs. 450,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+}

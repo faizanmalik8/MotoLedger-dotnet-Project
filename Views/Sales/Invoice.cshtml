@@ -1,0 +1,142 @@
+@{
+    ViewData["Title"] = "Sales Invoice";
+}
+
+<div class="container-fluid p-0" style="max-width: 820px;">
+    <!-- Top Action Bar (Hidden on Print) -->
+    <div class="d-flex align-items-center justify-content-between mb-4 d-print-none">
+        <a href="@Url.Action("Ledger", "Sales")" class="text-decoration-none text-muted small">
+            <i class="bi bi-arrow-left me-1"></i> Back to Sales Ledger
+        </a>
+        <div class="d-flex gap-2">
+            <button type="button" onclick="window.print()" class="btn-primary-forest">
+                <i class="bi bi-printer me-1"></i> Print Invoice
+            </button>
+        </div>
+    </div>
+
+    <!-- Printable Invoice Document -->
+    <div class="ml-card p-5 bg-white shadow-sm border">
+        <!-- Document Header -->
+        <div class="d-flex justify-content-between align-items-start border-bottom pb-4 mb-4">
+            <div>
+                <div class="d-flex align-items-center gap-2 mb-2">
+                    <div class="ml-sidebar-logo-icon" style="background-color: #1E3B2F;">
+                        <i class="bi bi-speedometer2"></i>
+                    </div>
+                    <span class="fw-bold fs-4" style="color: #1E3B2F;">MotoLedger</span>
+                </div>
+                <p class="text-muted small mb-0">Automotive Dealership & Lot Management</p>
+                <p class="text-muted small mb-0">Main Boulevard, Gulberg III, Lahore, Pakistan</p>
+                <p class="text-muted small mb-0">contact@motoledger.pk | +92 (42) 3578-9000</p>
+            </div>
+            <div class="text-end">
+                <span class="badge bg-light text-dark border px-3 py-1.5 mb-2 fw-semibold">SALES RECEIPT</span>
+                <div class="fw-bold fs-5" style="color: #1E3B2F;">INV-PK-08</div>
+                <div class="text-muted small">Date: 08 November 2026</div>
+                <div class="text-muted small">Status: Paid in Full</div>
+            </div>
+        </div>
+
+        <!-- Buyer & Seller Details -->
+        <div class="row g-4 mb-4">
+            <div class="col-6">
+                <span class="text-uppercase text-muted fw-bold small" style="font-size: 0.75rem;">Customer Details (Buyer)</span>
+                <div class="fw-bold text-dark mt-1">Muhammad Tariq</div>
+                <div class="text-muted small">CNIC: 35202-8491029-3</div>
+                <div class="text-muted small">Mobile: 0300-8491029</div>
+                <div class="text-muted small">Payment Method: Bank Transfer (Meezan Bank)</div>
+            </div>
+            <div class="col-6 text-end">
+                <span class="text-uppercase text-muted fw-bold small" style="font-size: 0.75rem;">Authorized Dealership</span>
+                <div class="fw-bold text-dark mt-1">MotoLedger Motors Lahore</div>
+                <div class="text-muted small">Dealer NTN: 8492018-4</div>
+                <div class="text-muted small">Authorized Officer: Faizan (Owner)</div>
+            </div>
+        </div>
+
+        <!-- Sold Vehicle Information -->
+        <div class="p-3 mb-4 rounded border" style="background-color: #FAF8F2;">
+            <span class="text-uppercase text-muted fw-bold small d-block mb-2" style="font-size: 0.75rem;">Vehicle Details</span>
+            <div class="row g-2 small">
+                <div class="col-md-3">
+                    <span class="text-muted">Make / Model:</span>
+                    <div class="fw-semibold text-dark">Suzuki Alto VXR</div>
+                </div>
+                <div class="col-md-3">
+                    <span class="text-muted">Model Year:</span>
+                    <div class="fw-semibold text-dark">2023</div>
+                </div>
+                <div class="col-md-3">
+                    <span class="text-muted">Registration:</span>
+                    <div class="fw-semibold text-dark">RWP-23-3051</div>
+                </div>
+                <div class="col-md-3">
+                    <span class="text-muted">Odometer:</span>
+                    <div class="fw-semibold text-dark">18,000 km</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Financial Breakdown Table -->
+        <div class="table-responsive mb-4">
+            <table class="table table-bordered mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th>Description</th>
+                        <th class="text-end" style="width: 170px;">Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="fw-semibold">2023 Suzuki Alto VXR</div>
+                            <span class="text-muted small">Agreed vehicle sale price</span>
+                        </td>
+                        <td class="text-end fw-medium">Rs. 2,450,000</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="fw-semibold">Biometric Verification & Documentation Fee</div>
+                            <span class="text-muted small">Excise biometric processing and verification</span>
+                        </td>
+                        <td class="text-end fw-medium">Rs. 15,000</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="fw-semibold">Excise Transfer & Smart Card Processing</div>
+                            <span class="text-muted small">Ownership transfer facilitation</span>
+                        </td>
+                        <td class="text-end fw-medium">Rs. 15,000</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td class="text-end fw-bold">Total Agreed Price:</td>
+                        <td class="text-end fw-bold">Rs. 2,480,000</td>
+                    </tr>
+                    <tr>
+                        <td class="text-end fw-bold">Amount Paid (Online Transfer):</td>
+                        <td class="text-end fw-bold text-success">-Rs. 2,480,000</td>
+                    </tr>
+                    <tr class="table-light">
+                        <td class="text-end fw-bold fs-6">Balance Due:</td>
+                        <td class="text-end fw-bold fs-6" style="color: #1E3B2F;">Rs. 0</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <!-- Signatures Section -->
+        <div class="row g-4 pt-4 border-top mt-5">
+            <div class="col-6">
+                <div class="border-bottom pb-4 mb-2"></div>
+                <span class="text-muted small">Buyer Signature: Muhammad Tariq</span>
+            </div>
+            <div class="col-6 text-end">
+                <div class="border-bottom pb-4 mb-2"></div>
+                <span class="text-muted small">Authorized Dealership Signature</span>
+            </div>
+        </div>
+    </div>
+</div>
