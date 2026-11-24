@@ -11,5 +11,6 @@ namespace MotoLedger.Repositories.Interfaces
         Task<bool> UpdateAsync(Vehicle vehicle);
         Task<bool> DeleteAsync(int id);
         Task<bool> UpdateStatusAsync(int vehicleId, string status);
+        Task<IEnumerable<Vehicle>> searchasync(string? term, string? status);
     }
 }

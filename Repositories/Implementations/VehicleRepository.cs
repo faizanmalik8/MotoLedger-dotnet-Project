@@ -63,6 +63,25 @@ namespace MotoLedger.Repositories.Implementations
             var res = await conn.ExecuteAsync(query, new { Id = id, Status = status });
             return res > 0;
         }
+        public async Task<IEnumerable<Vehicle>> searchasync(string? term, string? status)
+        {
+            SqlConnection conn= new SqlConnection(_connectionString);
+            var sql = "SELECT * FROM Vehicles WHERE 1=1";
+            var parameters = new DynamicParameters();
+            if (!string.IsNullOrWhiteSpace(term))
+            {
+                sql += " AND (Make LIKE @Term OR Model LIKE @Term OR RegistrationNumber LIKE @Term)";
+                parameters.Add("Term", "%" + term.Trim() + "%");
+            }
+            if (!string.IsNullOrWhiteSpace(status))
+            {
+                sql += " AND Status = @Status";
+                parameters.Add("Status", status.Trim());
+            }
+            sql += " ORDER BY Id DESC";
+            return await conn.QueryAsync<Vehicle>(sql, parameters);
+
+        }
 
     }
 }

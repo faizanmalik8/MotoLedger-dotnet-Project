@@ -3,32 +3,40 @@
   "WorkspaceRootPath": "E:\\C# Projects\\MotoLedger\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|e:\\c# projects\\motoledger\\repositories\\implementations\\vehiclerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|solutionrelative:repositories\\implementations\\vehiclerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|e:\\c# projects\\motoledger\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|solutionrelative:wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|e:\\c# projects\\motoledger\\controllers\\vehiclecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|solutionrelative:controllers\\vehiclecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|e:\\c# projects\\motoledger\\repositories\\implementations\\expenserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|solutionrelative:repositories\\implementations\\expenserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|e:\\c# projects\\motoledger\\repositories\\implementations\\salesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|solutionrelative:repositories\\implementations\\salesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|e:\\c# projects\\motoledger\\views\\sales\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|solutionrelative:views\\sales\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|e:\\c# projects\\motoledger\\controllers\\salescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|solutionrelative:controllers\\salescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|e:\\c# projects\\motoledger\\repositories\\implementations\\vehiclerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|solutionrelative:repositories\\implementations\\vehiclerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|e:\\c# projects\\motoledger\\controllers\\expensecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|solutionrelative:controllers\\expensecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|e:\\c# projects\\motoledger\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|e:\\c# projects\\motoledger\\repositories\\implementations\\expenserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|solutionrelative:repositories\\implementations\\expenserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|e:\\c# projects\\motoledger\\views\\vehicle\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|solutionrelative:views\\vehicle\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|e:\\c# projects\\motoledger\\controllers\\vehiclecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|solutionrelative:controllers\\vehiclecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|e:\\c# projects\\motoledger\\views\\shared\\_vehiclerowspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|solutionrelative:views\\shared\\_vehiclerowspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|e:\\c# projects\\motoledger\\repositories\\interfaces\\ivehiclerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -37,6 +45,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|e:\\c# projects\\motoledger\\repositories\\interfaces\\isalesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|solutionrelative:repositories\\interfaces\\isalesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|e:\\c# projects\\motoledger\\repositories\\implementations\\salesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|solutionrelative:repositories\\implementations\\salesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|e:\\c# projects\\motoledger\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B497F836-0727-A913-5996-1D0B6386AD14}|MotoLedger.csproj|e:\\c# projects\\motoledger\\repositories\\interfaces\\iexpenserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -66,80 +82,67 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Checkout.cshtml",
+              "DocumentMoniker": "E:\\C# Projects\\MotoLedger\\Views\\Sales\\Checkout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Sales\\Checkout.cshtml",
+              "ToolTip": "E:\\C# Projects\\MotoLedger\\Views\\Sales\\Checkout.cshtml",
+              "RelativeToolTip": "Views\\Sales\\Checkout.cshtml",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAAAIMAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-21T17:09:18.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "site.js",
+              "DocumentMoniker": "E:\\C# Projects\\MotoLedger\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\site.js",
+              "ToolTip": "E:\\C# Projects\\MotoLedger\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "wwwroot\\js\\site.js",
+              "ViewState": "AgIAAJsAAAAAAAAAAAAqwPIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-11-21T16:33:38.696Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\C# Projects\\MotoLedger\\Views\\Vehicle\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Vehicle\\Index.cshtml",
+              "ToolTip": "E:\\C# Projects\\MotoLedger\\Views\\Vehicle\\Index.cshtml",
+              "RelativeToolTip": "Views\\Vehicle\\Index.cshtml",
+              "ViewState": "AgIAADkAAAAAAAAAAADwv0AAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-21T16:23:20.457Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SalesController.cs",
-              "DocumentMoniker": "E:\\C# Projects\\MotoLedger\\Controllers\\SalesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\SalesController.cs",
-              "ToolTip": "E:\\C# Projects\\MotoLedger\\Controllers\\SalesController.cs",
-              "RelativeToolTip": "Controllers\\SalesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-15T13:09:31.118Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "VehicleController.cs",
-              "DocumentMoniker": "E:\\C# Projects\\MotoLedger\\Controllers\\VehicleController.cs",
-              "RelativeDocumentMoniker": "Controllers\\VehicleController.cs",
-              "ToolTip": "E:\\C# Projects\\MotoLedger\\Controllers\\VehicleController.cs",
-              "RelativeToolTip": "Controllers\\VehicleController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-15T13:05:33.029Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SalesRepository.cs",
-              "DocumentMoniker": "E:\\C# Projects\\MotoLedger\\Repositories\\Implementations\\SalesRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Implementations\\SalesRepository.cs",
-              "ToolTip": "E:\\C# Projects\\MotoLedger\\Repositories\\Implementations\\SalesRepository.cs",
-              "RelativeToolTip": "Repositories\\Implementations\\SalesRepository.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAYwF4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-15T11:17:22.496Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "ExpenseRepository.cs",
               "DocumentMoniker": "E:\\C# Projects\\MotoLedger\\Repositories\\Implementations\\ExpenseRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Implementations\\ExpenseRepository.cs",
               "ToolTip": "E:\\C# Projects\\MotoLedger\\Repositories\\Implementations\\ExpenseRepository.cs",
               "RelativeToolTip": "Repositories\\Implementations\\ExpenseRepository.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAA1wEMAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAACkAAAAAAAAAAAAswEMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-15T11:16:51.513Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "VehicleRepository.cs",
-              "DocumentMoniker": "E:\\C# Projects\\MotoLedger\\Repositories\\Implementations\\VehicleRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Implementations\\VehicleRepository.cs",
-              "ToolTip": "E:\\C# Projects\\MotoLedger\\Repositories\\Implementations\\VehicleRepository.cs",
-              "RelativeToolTip": "Repositories\\Implementations\\VehicleRepository.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAwwD8AAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-15T11:16:15.03Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "ExpenseController.cs",
               "DocumentMoniker": "E:\\C# Projects\\MotoLedger\\Controllers\\ExpenseController.cs",
               "RelativeDocumentMoniker": "Controllers\\ExpenseController.cs",
@@ -147,23 +150,102 @@
               "RelativeToolTip": "Controllers\\ExpenseController.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-15T13:07:40.597Z"
+              "WhenOpened": "2026-11-15T13:07:40.597Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
+              "Title": "SalesController.cs",
+              "DocumentMoniker": "E:\\C# Projects\\MotoLedger\\Controllers\\SalesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SalesController.cs",
+              "ToolTip": "E:\\C# Projects\\MotoLedger\\Controllers\\SalesController.cs",
+              "RelativeToolTip": "Controllers\\SalesController.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAYwCUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-15T13:09:31.118Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "VehicleRepository.cs",
+              "DocumentMoniker": "E:\\C# Projects\\MotoLedger\\Repositories\\Implementations\\VehicleRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementations\\VehicleRepository.cs",
+              "ToolTip": "E:\\C# Projects\\MotoLedger\\Repositories\\Implementations\\VehicleRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementations\\VehicleRepository.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAzwEEAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-15T11:16:15.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_VehicleRowsPartial.cshtml",
+              "DocumentMoniker": "E:\\C# Projects\\MotoLedger\\Views\\Shared\\_VehicleRowsPartial.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_VehicleRowsPartial.cshtml",
+              "ToolTip": "E:\\C# Projects\\MotoLedger\\Views\\Shared\\_VehicleRowsPartial.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_VehicleRowsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-21T16:12:36.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "IVehicleRepository.cs",
               "DocumentMoniker": "E:\\C# Projects\\MotoLedger\\Repositories\\Interfaces\\IVehicleRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IVehicleRepository.cs",
               "ToolTip": "E:\\C# Projects\\MotoLedger\\Repositories\\Interfaces\\IVehicleRepository.cs",
               "RelativeToolTip": "Repositories\\Interfaces\\IVehicleRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-15T10:38:55.334Z"
+              "WhenOpened": "2026-11-15T10:38:55.334Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
+              "Title": "VehicleController.cs",
+              "DocumentMoniker": "E:\\C# Projects\\MotoLedger\\Controllers\\VehicleController.cs",
+              "RelativeDocumentMoniker": "Controllers\\VehicleController.cs",
+              "ToolTip": "E:\\C# Projects\\MotoLedger\\Controllers\\VehicleController.cs",
+              "RelativeToolTip": "Controllers\\VehicleController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-15T13:05:33.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SalesRepository.cs",
+              "DocumentMoniker": "E:\\C# Projects\\MotoLedger\\Repositories\\Implementations\\SalesRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementations\\SalesRepository.cs",
+              "ToolTip": "E:\\C# Projects\\MotoLedger\\Repositories\\Implementations\\SalesRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementations\\SalesRepository.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAYwF4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-15T11:17:22.496Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ISalesRepository.cs",
+              "DocumentMoniker": "E:\\C# Projects\\MotoLedger\\Repositories\\Interfaces\\ISalesRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\ISalesRepository.cs",
+              "ToolTip": "E:\\C# Projects\\MotoLedger\\Repositories\\Interfaces\\ISalesRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\ISalesRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-15T10:40:32.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\C# Projects\\MotoLedger\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -175,19 +257,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ISalesRepository.cs",
-              "DocumentMoniker": "E:\\C# Projects\\MotoLedger\\Repositories\\Interfaces\\ISalesRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\ISalesRepository.cs",
-              "ToolTip": "E:\\C# Projects\\MotoLedger\\Repositories\\Interfaces\\ISalesRepository.cs",
-              "RelativeToolTip": "Repositories\\Interfaces\\ISalesRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-15T10:40:32.05Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "IExpenseRepository.cs",
               "DocumentMoniker": "E:\\C# Projects\\MotoLedger\\Repositories\\Interfaces\\IExpenseRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IExpenseRepository.cs",
@@ -199,7 +269,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "SalesTransaction.cs",
               "DocumentMoniker": "E:\\C# Projects\\MotoLedger\\Models\\Entities\\SalesTransaction.cs",
               "RelativeDocumentMoniker": "Models\\Entities\\SalesTransaction.cs",
@@ -211,7 +281,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "VehicleExpense.cs",
               "DocumentMoniker": "E:\\C# Projects\\MotoLedger\\Models\\Entities\\VehicleExpense.cs",
               "RelativeDocumentMoniker": "Models\\Entities\\VehicleExpense.cs",
@@ -223,7 +293,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "Vehicle.cs",
               "DocumentMoniker": "E:\\C# Projects\\MotoLedger\\Models\\Entities\\Vehicle.cs",
               "RelativeDocumentMoniker": "Models\\Entities\\Vehicle.cs",
@@ -235,7 +305,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "E:\\C# Projects\\MotoLedger\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",

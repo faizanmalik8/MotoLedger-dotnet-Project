@@ -24,9 +24,17 @@
                     <h6 class="fw-bold mb-3" style="color: #1E3B2F;">1. Vehicle Selection</h6>
                     <div class="mb-3">
                         <label class="ml-form-label">Available Lot Vehicle</label>
-                        <select class="ml-input-control" required>
-                            <option value="1042" selected>LEA-22-4891: 2022 Honda Civic Oriel (Total Basis: Rs. 5,540,000)</option>
-                            <option value="1040">KHI-20-1184: 2020 Kia Sportage FWD (Total Basis: Rs. 6,220,000)</option>
+                        <select id="vehicleSelect" name="VehicleId" class="ml-input-control" required>
+                            <option value=""> Choose an Available Vehicle... </option>
+                            @if (ViewBag.Availablevehicles != null)
+                            {
+                                foreach (var v in (IEnumerable<MotoLedger.Models.Entities.Vehicle>)ViewBag.Availablevehicles)
+                                {
+                                    <option value="@v.Id" selected="@(ViewBag.SelectedVehicleId == v.Id ? "selected" : null)">
+                                        @v.RegistrationNumber: @v.Make @v.Model (Base: Rs. @v.BasePurchasePrice.ToString("N0"))
+                                    </option>
+                                }
+                            }
                         </select>
                         <span class="text-muted small mt-1 d-block">Only vehicles currently in Available status can be sold.</span>
                     </div>
@@ -34,7 +42,7 @@
                     <div class="mb-3">
                         <label class="ml-form-label">Agreed Final Sale Price (Rs.)</label>
                         <div class="position-relative">
-                            <input type="number" step="5000" class="ml-input-control" value="5850000" style="padding-left: 2.75rem;" required />
+                            <input type="number" id="salePriceInput" name="SalePrice" step="5000" class="ml-input-control" value="5850000" style="padding-left: 2.75rem;" required />
                             <span class="position-absolute text-muted small fw-medium" style="left: 0.75rem; top: 50%; transform: translateY(-50%);">Rs.</span>
                         </div>
                     </div>
@@ -97,31 +105,31 @@
 
                     <div class="d-flex justify-content-between py-2 border-bottom">
                         <span class="text-muted small">Agreed Sale Price</span>
-                        <span class="fw-bold text-dark">Rs. 5,850,000</span>
+                        <span id="lblAgreedPrice" class="fw-bold text-dark">Rs. 5,850,000</span>
                     </div>
 
                     <div class="d-flex justify-content-between py-2 border-bottom">
                         <span class="text-muted small">Base Purchase Price</span>
-                        <span class="text-danger small">-Rs. 5,400,000</span>
+                        <span id="basePurchasePrice" class="text-danger small">-Rs. 5,400,000</span>
                     </div>
 
                     <div class="d-flex justify-content-between py-2 border-bottom">
                         <span class="text-muted small">Workshop Expenses</span>
-                        <span class="text-danger small">-Rs. 140,000</span>
+                        <span id="lblWorkshopExpenses" class="text-danger small">-Rs. 140,000</span>
                     </div>
 
                     <div class="d-flex justify-content-between py-2 border-bottom">
                         <span class="text-muted small">Total Cost Basis</span>
-                        <span class="fw-semibold text-dark">Rs. 5,540,000</span>
+                        <span id="lblTotalCost" class="fw-semibold text-dark">Rs. 5,540,000</span>
                     </div>
 
                     <div class="p-3 my-3 rounded border" style="background-color: #E8F5ED; border-color: #B8E0C9 !important;">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <span class="text-uppercase fw-bold" style="font-size: 0.75rem; color: #1E5C3A;">Estimated Net Profit</span>
-                                <div class="fs-4 fw-bold" style="color: #1E5C3A;">+Rs. 310,000</div>
+                                <div id="lblNetProfit" class="fs-4 fw-bold" style="color: #1E5C3A;">+Rs. 310,000</div>
                             </div>
-                            <span class="badge px-2 py-1 small" style="background-color: #1E5C3A; color: #FFFFFF;">
+                            <span id="lblMarginBadge" class="badge px-2 py-1 small" style="background-color: #1E5C3A; color: #FFFFFF;">
                                 5.6% Margin
                             </span>
                         </div>

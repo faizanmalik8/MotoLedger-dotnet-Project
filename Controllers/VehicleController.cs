@@ -47,5 +47,11 @@ namespace MotoLedger.Controllers
             if (vehicle == null) return NotFound();
             return View(vehicle);
         }
+        [HttpGet]
+        public async Task<IActionResult> Search(string? term, string? status)
+        {
+            var vehicles=await _vehicleRepo.searchasync(term, status);
+            return PartialView("_VehicleRowsPartial", vehicles);
+        }
     }
 }

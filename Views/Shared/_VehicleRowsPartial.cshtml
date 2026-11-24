@@ -1,0 +1,19 @@
+﻿@model IEnumerable<MotoLedger.Models.Entities.Vehicle>
+
+@if (Model != null && Model.Any())
+{
+    foreach (var car in Model)
+    {
+        <partial name="_VehicleRowPartial" model="car" />
+    }
+}
+else
+{
+    <tr>
+        <td colspan="5" class="text-center py-5 text-muted">
+            <i class="bi bi-search fs-2 d-block mb-2 text-muted"></i>
+            <span class="fw-semibold">No matching vehicles found.</span>
+            <p class="small text-muted mb-0">Try adjusting your search keyword or status filter.</p>
+        </td>
+    </tr>
+}

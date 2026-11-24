@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MotoLedger")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+711922fff02a639ea4f443ce2ddd17c3fd385ef0")]
 [assembly: System.Reflection.AssemblyProductAttribute("MotoLedger")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MotoLedger")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
